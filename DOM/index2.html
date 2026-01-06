@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM2 Learning</title>
+</head>
+<body style="background-color: black; color: bisque;  padding: 10px;">
+    <div class="parent">
+        <div class="id1">Monday</div>
+        <div class="id2">Tuesday</div>
+        <div class="id3">Wednesday</div>
+        <div class="id4" >Thrusday</div>
+    </div>
+</body>
+
+
+<script>
+    const tara = document.querySelector('.parent');
+    
+    console.log(tara)
+    console.log(tara.children)
+    console.log(tara.children[1].innerHTML)
+    for(let i = 0; i < tara.children.length;i++){
+        console.log(tara.children[i].innerHTML)
+    }
+    // tara.children[1].style.color = "blue"
+    // tara.style.color = "yellow"
+    // tara.lastElementChild.style.color = "green"
+    // tara.style ="background-color: aqua;"
+    // tara.style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"
+
+    const day = document.querySelector('.id3')
+    console.log(day.textContent)  // it will shown the text content in this class
+    console.log(day.nextElementSibling.innerText)
+ 
+</script>
+</html> 
