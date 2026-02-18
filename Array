@@ -1,0 +1,101 @@
+// const arr = [2,4,56,89,34];
+
+// console.log(arr);
+// console.log("\n")
+
+// const man = new Array(45,35,35,35,23,0,89)
+// console.log(man);
+
+// man.push(34);  // insert element 
+// console.log(man);
+// console.log(`Array man is convet into string : ${man.toString()}`);  // convert into string 
+
+// man.pop();
+// console.log(man);  // remove element 
+
+// console.log(`Elements in arr before unshift : ${arr} `)
+// // console.log(arr.length)
+// arr.unshift(14);  // unshift add element at the starting of arr
+// arr.unshift(45)
+// console.log(`elements in arr after unshit : ${arr}`)  
+// // console.log(arr.length)
+
+// arr.shift()   // remove elements form starting 
+// console.log( typeof arr)
+// console.log(arr);
+// console.log(man.includes(23));
+// console.log(man.indexOf(23));
+// console.log(man[3])
+
+// let newarr = arr.join();  // bind and convert into stirng the array
+// console.log(typeof newarr)  
+
+
+////here we performing splice and slice 
+// const Porsh = new Array (34, 23,56,78,18,92,45,68,19);
+// console.log(Porsh);
+
+// console.log(`here we are performing slice ${Porsh.slice(3,5)}`)
+// console.log(Porsh)
+// console.log(`here we use splice ${Porsh.splice(3,2)}`);
+
+// console.log(Porsh)
+
+
+// let hai = [2,4,56,89,34];
+// console.log(hai.slice(1,4))
+// console.log(hai)
+// console.log(hai.splice(1,4))
+// console.log(hai)
+
+
+
+
+
+let marvel = ["iron","captain","thor","rocket"];
+// console.log(marvel)
+
+let dc = ["batman", "super","adam"];
+
+let allhero = marvel.concat(dc)
+console.log(allhero)
+console.log("\n")
+
+let combine = marvel.concat(dc);  // in concat we only concate two arrays 
+// //// this is best way to concate the more than one array just use [...vairalbe1, ...variabel2 , ...variable3 ,...variable(upto N) ]  
+let combine_heroes = [...marvel,...dc]
+console.log("print combine ")
+console.log(combine)
+
+
+
+
+
+
+
+//when there is array inside the array
+// let arr1 = [34,56,67,[2,8,5],7,[7,1,9,0]];
+// console.log(arr1)
+
+// /////to arange this type of array we use flat function it will automatically arrnage the data 
+// console.log(arr1.flat(Infinity))
+
+
+
+
+
+
+
+
+// // if we want to convert other type of data into array
+// let name = "hitesh";
+// console.log(Array.isArray(name))  // it will check given data is Array or not
+// console.log(Array.from(name))   // it will data into array 
+
+
+// let score1 = 100
+// let score2 = 500
+// let score3 = 700
+
+// let final = Array.of(score1,score2,score3); // it will covert mulitple data into array 
+// console.log(final)
