@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(55, 188, 188);
+}
+
+ 
+.button{
+    border: 2px solid black;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    display: inline-block;
+    align-content: center;
+  padding: 10px;
+  margin: 10px;
+
+}  
+
+.Home ::before{
+    content: " ➥";
+
+}
+#grey{
+    background-color: grey;
+    
+}
+
+#green{
+    background-color: rgb(98, 197, 22);
+}
+
+#white{
+    background-color: whitesmoke;}
+
+#yellow{
+    background-color: yellow;
+}

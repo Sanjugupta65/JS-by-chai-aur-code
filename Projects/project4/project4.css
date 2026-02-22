@@ -1,0 +1,22 @@
+*{
+    background-color: black;
+    color: rgb(228, 227, 226);
+    text-align: center;
+}
+
+.form{
+
+    background-color: rgb(56, 55, 53);
+    height: 50vh;
+    /* width: 50vw; */
+    /* text-align: center; */
+    /* height: 20px;  */
+    /* width: auto;  */
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 0% 35% 0% 35% ;
+    /* margin-top: 10px; */
+    /* font-weight: 600; */
+    /* background-color: orange ; */
+}
