@@ -17,10 +17,41 @@
 </head>
 
  
-
+ 
 <body>
-    <h1>chai aur code </h1>
+    <h1>Practice Async in JS </h1>
     <button id="stopkar"> stopkar</button>
     
 </body>
+        
+<script> 
+        setTimeout(function(){
+            console.log("sanju")
+        },200) 
+
+        //doing using reference
+        const work = function(){
+            console.log("Taking a time to do work")
+        }
+
+        setTimeout(work,2000)
+        
+        const job = function(){
+            document.querySelector('h1').innerHTML = "using setTimeout function";
+        }
+        
+        const ruko = setTimeout(job,2000)
+
+        // yha agar h1 ka inner html change hone se rokna hai to hum stop kar wle button ko click kar denge so cleartimeot wla function execute ho jayega and h1 a text change nhi hoga
+        document.querySelector('#stopkar'),addEventListener('click',function(){
+            clearTimeout(ruko)
+            console.log("stop hoo gya settimeout wla")
+        })
+
+
+
+
+</script>
+
+
 </html>
