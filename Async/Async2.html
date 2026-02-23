@@ -4,14 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Asyn in JS</title>
+    <!-- <style>
+        *{
+            background-color: rgb(105, 109, 97);
+            color: rgb(10, 7, 31);
+        }
+        
+    </style> -->
 </head>
 <body>
     <h1> Learning about set Time interval function</h1>
-    <button id="start"> start </button>
-    <button id = "stop"> stop</button>
+    <button id="start"> click to start </button>
+    <button id = "stop"> click to stop</button>
 </body>
 
 <script>
-    
+    // using set interval function
+    // const writing =     setInterval(function(){
+    //     console.log("setinterval",Date.now())
+    // },200)
+
+    // document.querySelector('#stop').addEventListener('click',function(){
+    //     clearInterval(writing)
+    // })
+
+
+
+    //making color changing project
+    function background_color() {
+        var randomColor = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, '0');
+    document.body.style.backgroundColor = randomColor;
+    }
+
+    //statt the interval
+  let color_change = setInterval(background_color,1000);
+
+
+  //stop button
+  document.querySelector('#stop').addEventListener('click',function(){
+    document.querySelector('h1').innerText = "color changing stop";
+    clearInterval(color_change);
+    console.log("color changing stop now");
+  })
+
+
+// click the start button to again start the color changing
+  document.querySelector('#start').addEventListener('click',function(){
+     clearInterval(color_change); // prevent multiple intervals stacking
+    color_change = setInterval(background_color,100);
+    document.querySelector('h1').innerText = "color changing start";
+    console.log("color changing start again");
+  });
+
 </script>
 </html>
