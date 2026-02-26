@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Asyn in JS</title>
+    <title>Learning Asyn in JS(background-color changing project)</title>
     <!-- <style>
         *{
             background-color: rgb(105, 109, 97);
@@ -36,14 +36,22 @@
     document.body.style.backgroundColor = randomColor;
     }
 
+    
+    let color_change ;
     //statt the interval
-  let color_change = setInterval(background_color,1000);
+    document.querySelector('#start').addEventListener('click',function() {        
+     color_change = setInterval(background_color,1000);
+    })
+
+
+
 
 
   //stop button
   document.querySelector('#stop').addEventListener('click',function(){
     document.querySelector('h1').innerText = "color changing stop";
     clearInterval(color_change);
+    color_change = null; // just for better coding style or review
     console.log("color changing stop now");
   })
 
@@ -51,7 +59,7 @@
 // click the start button to again start the color changing
   document.querySelector('#start').addEventListener('click',function(){
      clearInterval(color_change); // prevent multiple intervals stacking
-    color_change = setInterval(background_color,100);
+    color_change = setInterval(background_color,1000);
     document.querySelector('h1').innerText = "color changing start";
     console.log("color changing start again");
   });
