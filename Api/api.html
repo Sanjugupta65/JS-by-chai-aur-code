@@ -19,11 +19,11 @@
 </body>
 
 <script>
-    const url = 'https://randomuser.me/api/'
-    // const requestURL = `https://api.github.com/users/hitestchoudhary`;
-    const xml_request = new XMLHttpRequest();
-    // open() is function which used to call the request
-    xml_request.open('GET', url);
+    // const url = 'https://randomuser.me/api/'
+    // // const requestURL = `https://api.github.com/users/hitestchoudhary`;
+    // const xml_request = new XMLHttpRequest();
+    // // open() is function which used to call the request
+    // xml_request.open('GET', url);
 
     // xml_request.onreadystatechange = function () {
     //     console.log(xml_request.readyState);
@@ -38,40 +38,68 @@
 
     //the above result is come as string format there for we can't extract a specific information from that using (.name or .gender) , that's why we first convert that result into JSON/object
 
-    xml_request.onreadystatechange = function () {
-        console.log(xml_request.readyState);
+//     xml_request.onreadystatechange = function () {
+//         console.log(xml_request.readyState);
 
-        if (xml_request.readyState == 4) {
-            const data = JSON.parse(this.responseText);
-            // information = this.responseText;
-            console.log(typeof (data))
-            console.log(data);
+//         if (xml_request.readyState == 4) {
+//             const data = JSON.parse(this.responseText);
+//             // information = this.responseText;
+//             console.log(typeof (data))
+//             console.log(data);
             
 
-            // The results are inside an array called "results"
-    const user = data.results[0];  // get the first user
-// console.log(user)
-    //Now extract specific fields
-    const firstname = user.gender;
-    const lastname = user.name.last;
-    const Email = user.email;
-    const phone = user.cell;
+//             // The results are inside an array called "results"
+//     const user = data.results[0];  // get the first user
+// // console.log(user)
+//     //Now extract specific fields
+//     const firstname = user.gender;
+//     const lastname = user.name.last;
+//     const Email = user.email;
+//     const phone = user.cell;
 
-      console.log("firstname : " ,firstname);
-    console.log("Last Name:",  lastname);
-    console.log("Email:",      Email);
-    console.log("phone:",    phone );
+//       console.log("firstname : " ,firstname);
+//     console.log("Last Name:",  lastname);
+//     console.log("Email:",      Email);
+//     console.log("phone:",    phone );
 
-    // document.querySelector('h1').innerHTML += `Name is ${firstname}`;
-    // document.body.innerHTML += `Name is ${firstname}`;
-        }
+//     // document.querySelector('h1').innerHTML += `Name is ${firstname}`;
+//     // document.body.innerHTML += `Name is ${firstname}`;
+//         }
+//     }
+
+
+
+
+//     // when we use send() , then our call actualy called
+//     xml_request.send();
+
+
+
+
+
+
+//this is part of promise but use here bca i want to see result on browser
+let myPromise = new Promise(function(reslove,reject){
+    let req = new XMLHttpRequest();
+    req.open('GET',`https:/randomuser.me/api/`);
+    req.onload = function(){
+        if(req.status == 200){reslove(req.responseText);}
+        else{ reject("file is not found");}
     }
+    req.send();
+ })
+
+ myPromise.then(function(value){
+    console.log(value);
+ })
 
 
 
 
-    // when we use send() , then our call actualy called
-    xml_request.send();
+
+
+
+
 
 </script>
 
