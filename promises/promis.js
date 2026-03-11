@@ -97,26 +97,40 @@ usinasync();*/
 
 
 
+// here is example why use await before fectching any data 
+async function getuser() {
+    try{
+        const data =  fetch(`https:/randomuser.me/api/`); // fetch() returns a Promise immediately. Without await, JavaScript doesn't pause — it moves to console.log right away, so data is just a pending Promise object, not the actual response.
+        // const data = await fetch(`https:/randomuser.me/api/`); // await tells JavaScript: "pause here until the Promise resolves", then assigns the actual Response object to data
+        console.log(data);
+        
+    } catch(err){
+        console.log(`E: error occurs` )
+    }
+}
+
+getuser();
 
 
 
 
-const userinfo = new Promise(function(reslove,reject){
-    const inoofoo =  fetch(`https:/randomuser.me/api/`)
-    reslove(inoofoo);
-    reject('somthing wrong');
-})
 
-userinfo.then((result) =>{
-    return result.json();
-})
-.then((mail) =>{
-    console.log("\n")
-    console.log("informations is : ")
-    console.log(mail)
-})
-.catch((err) =>{
-    console.log(err);
-})
+// const userinfo = new Promise(function(reslove,reject){
+//     const inoofoo =  fetch(`https:/randomuser.me/api/`)
+//     reslove(inoofoo);
+//     reject('somthing wrong');
+// })
+
+// userinfo.then((result) =>{
+//     return result.json();
+// })
+// .then((mail) =>{
+//     console.log("\n")
+//     console.log("informations is : ")
+//     console.log(mail)
+// })
+// .catch((err) =>{
+//     console.log(err);
+// })
 
 
