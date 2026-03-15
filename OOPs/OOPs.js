@@ -49,6 +49,15 @@ javascriptgetuserinf() {
 // console.log(this)
 
 
+
+
+
+
+
+
+
+
+/*
 function student(Name,rollno,id){
     this.Name = Name;
     this.rollno = rollno;
@@ -64,3 +73,30 @@ function student(Name,rollno,id){
 const  s2 = new student("juue",345,783);
 console.log(s1);
 console.log(s1.hello);
+*/
+
+
+
+
+
+
+
+
+
+
+// using inheritance
+const Teacher = {
+    makingvideo : true
+}
+
+const Teaching  = {
+    isavailabe : false
+}
+
+const supprot = {
+    making_assi : true,
+    isfulltime : true
+}
+
+// in C++ use inherte , but in JS we use setProtypeof('form which we inhert property')
+Object.setPrototypeOf(Teacher,supprot);
