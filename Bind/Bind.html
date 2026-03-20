@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind in JS</title>
+</head>
+
+<body>
+    <button id="btn" style="margin-left: 12%;"> Button Clicked</button>
+</body>
+
+<script>
+    class React {
+        constructor() {
+            this.library = "React";
+            this.server = "http://127.0.0.1:3000/Bind/Bind.html"
+
+            //before using the bind the the console output show the server as not defind/undefind bca it lost the connection with the server bca it si not bind to that 
+            document.querySelector('button').addEventListener('click', this.handleclick.bind(this))
+            
+            // after using the bind when we click on the button it will show the about the server info
+            document.querySelector('button').addEventListener('click', this.handleclick.bind(this))
+        }
+
+        handleclick() {
+            console.log("button click");
+            console.log(this)
+        }
+    }
+
+    const app = new React();
+
+
+
+
+
+
+
+
+
+
+    // a real world use of the bind
+    // bind() lets you fix the value of this in a function — so no matter where or how the function is called, this always points to what you want.
+
+    // The Problem First (why we need bind)
+    class Student {
+        constructor(name) {
+            this.name = name;
+        }
+
+        hello() {
+            console.log(`Hi, I am ${this.name}`);
+        }
+    }
+
+    const s1 = new Student("Sanju");
+
+    s1.hello();                    // ✅ "Hi, I am Sanju"
+
+    var fn = s1.hello;
+    fn();                       // ❌ "Hi, I am undefined"  → this is lost!
+    // Why undefined?
+    // When you copy a method into a variable, it loses its connection to the object — this no longer points to s1.
+
+    // Fix with bind()
+    fn = s1.hello.bind(s1);  // ✅ lock "this" to s1
+    fn();                           // ✅ "Hi, I am Sanju"
+
+
+</script>
+
+</html>
