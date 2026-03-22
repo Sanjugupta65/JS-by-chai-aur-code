@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loxical scoping and closure</title>
+</head>
+<body>
+    <button id="orange"> orange</button>
+    <button id="green"> green</button>
+    <button id="red"> red</button>
+    <button id="blue"> blue</button>
+</body>
+<script>
+    
+
+
+
+const a = "global";          // available everywhere
+
+function outer() {
+    const b = "outer";       // available inside outer + inner
+
+    function inner() {
+        const c = "inner";   // only available inside inner
+
+        console.log(a);      // ✅ global
+        console.log(b);      // ✅ outer
+        console.log(c);      // ✅ inner
+    }
+
+    inner();
+    // console.log(c);          // ❌ ERROR — c is not defined here
+}
+
+outer();
+```
+
+
+// > A function can look **outward** for variables, but outer functions **cannot look inward**.
+
+// global
+//   └── outer()  can see → global
+//         └── inner()  can see → global + outer + inner```
+
+
+
+
+
+
+
+
+
+
+function out() {
+    const message = "Hello Sanju";   // outer variable
+
+    function ine() {
+        console.log(message);        // inner "closes over" message
+    }
+
+     return ine;   // return the function itself
+}
+
+const fn = out();   // outer() is done now
+fn();                 // ✅ still prints "Hello Sanju"  ← CLOSURE!
+
+
+
+
+</script>
+    
+<script>
+/* suppose we are making a somthing where there a lot of button with (orange, green , red ,blue and a lot of) , when the user click on button the background color of the changed according ot which button user click . Practically it not possible to us to write a doccumet.queryselecteor(button id) and click event for every button  so we see here how our lexical work here*/
+
+    function clickhandler(color){
+        
+
+         function colorchange(){
+            document.body.style.backgroundColor = `${color}`
+        }
+        return colorchange;
+    }
+
+    document.getElementById('orange').onclick = clickhandler("orange")
+    document.getElementById('green').onclick = clickhandler("green")
+    document.getElementById('red').onclick = clickhandler("red")
+    document.getElementById('blue').onclick = clickhandler("blue")
+
+</script>
+</html>
